@@ -1,0 +1,53 @@
+#define CHN_JSON_VALUE_ACTIVE       "active"
+#define CHN_JSON_VALUE_DEVCODE      "devCode"
+#define CHN_JSON_VALUE_ID           "id"
+#define CHN_JSON_VALUE_SIGNALIDS    "signalIds"
+#define CHN_JSON_VALUE_TAG          "tag"
+
+#define CHN_JSON_VALUE_SENSOR_TYPE  "sensorType"
+#define CHN_DI_JSON_VALUE_MAX_VALUE "maxValue"
+#define CHN_DI_JSON_VALUE_MIN_VALUE "minValue"
+
+#define CHN_AI_DI_JSON_VALUE_ARRAY  "AI_DIChannels"
+#define CHN_DO_JSON_VALUE_ARRAY     "DOChannels"
+
+	
+	
+	cJSON *jobj = cJSON_CreateObject();
+    cJSON *DOArry = cJSON_CreateArray();
+    cJSON *AI_DIArry = cJSON_CreateArray();
+
+    cJSON_AddItemToObject(jobj, CHN_AI_DI_JSON_VALUE_ARRAY, AI_DIArry);
+    cJSON_AddItemToObject(jobj, CHN_DO_JSON_VALUE_ARRAY, DOArry);
+
+    for ( int i=0; i<2; i++ )
+    {
+        cJSON *DOObj = cJSON_CreateObject();
+        cJSON_AddItemToArray(DOArry, DOObj);
+        cJSON_AddNumberToObject(DOObj,"id", i+1);
+        cJSON_AddNumberToObject(DOObj, CHN_JSON_VALUE_ACTIVE, 0);
+        cJSON_AddStringToObject(DOObj, CHN_JSON_VALUE_TAG, "");
+        cJSON_AddStringToObject(DOObj, CHN_JSON_VALUE_DEVCODE, "0");
+        cJSON *signalArry = cJSON_CreateArray();
+        cJSON_AddItemToObject(DOObj, CHN_JSON_VALUE_SIGNALIDS, signalArry);
+    }
+
+    for ( int i=0; i<2; i++ )
+    {
+        cJSON *AI_DIObj = cJSON_CreateObject();
+        cJSON_AddItemToArray(AI_DIArry, AI_DIObj);
+        cJSON_AddNumberToObject(AI_DIObj,"id", i+1);
+        cJSON_AddNumberToObject(AI_DIObj, CHN_JSON_VALUE_ACTIVE, 0);
+        cJSON_AddStringToObject(AI_DIObj, CHN_JSON_VALUE_TAG, "");
+        cJSON_AddStringToObject(AI_DIObj, CHN_JSON_VALUE_DEVCODE, "0");
+        cJSON_AddNumberToObject(AI_DIObj, CHN_JSON_VALUE_SENSOR_TYPE, 0);
+        cJSON_AddNumberToObject(AI_DIObj, CHN_DI_JSON_VALUE_MAX_VALUE, 0);
+        cJSON_AddNumberToObject(AI_DIObj, CHN_DI_JSON_VALUE_MIN_VALUE, 0);
+        cJSON *signalArry = cJSON_CreateArray();
+        cJSON_AddItemToObject(AI_DIObj, CHN_JSON_VALUE_SIGNALIDS, signalArry);
+
+    }
+
+    char *out = cJSON_Print(jobj);
+    cJSON_Delete(jobj);
+    free(out);

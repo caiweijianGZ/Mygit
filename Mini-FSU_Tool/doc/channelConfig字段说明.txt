@@ -1,0 +1,24 @@
+"DOChannels": [
+{
+	"active": 0,		//通道启用：0表示禁止 1表示启用
+	"devCode": 0,		//设备Code，实际数据类型为字符串(十进制14位数)
+	"id": 1,			//通道编号
+	"signalIds": [		//信号ID的数组，信号ID实际数据类型为U32(10进制9位数，第一位默认为0)
+	],
+	"tag": ""			//通道备注，编码格式UTF-8，定长（20字节）
+},
+
+"AI_DIChannels": [
+	{
+		"active": 0,	
+		"devCode": 0,	
+		"id": 1,		
+		"maxValue": 0,	//最大值，实际数据类型signed int
+		"minValue": 0,	//最小值，实际数据类型signed int
+		"sensorType": 0,//0表示AI电压型 1表示AI电流型 2表示数字型 3表示DI常开 4表示DI常闭
+		"signalIds": [	
+		],
+		"tag": ""		
+	},
+	
+	

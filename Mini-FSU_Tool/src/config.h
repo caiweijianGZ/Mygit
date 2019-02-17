@@ -1,0 +1,13 @@
+
+#ifdef NOT_USE_IN_QT_PROJECT
+
+#DEFINES += DEBUG
+
+DEFINES += DO_DISABLE
+
+DEFINES += DCD_9500
+RC_FILE += ./product/DCD9500/ico/app.rc
+
+
+#endif
+

@@ -1,0 +1,13 @@
+cJSON内存管理
+cJson分为自动和手动两种使用方式：
+
+在自动模式下，cJSON使用默认的malloc和free函数管理内存，在cJSON中，每个节点都是malloc而来，每个节点的string和valuestring也是malloc而来，使用cJSON_Delete函数可以递归释放JSON树中malloc的节点内存和字符内存，使用cJSON_Print函数后，则需要手动释放cJSON_Print函数分配的内存，避免内存泄露
+在手动模式下，cJSON提供了钩子函数来帮助用户自定义内存管理函数，如果不设置，这默认为malloc和free
+--------------------- 
+作者：AnSwEr不是答案 
+来源：CSDN 
+原文：https://blog.csdn.net/u011192270/article/details/80221394 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+cJSON_Parse() -> JSON_Delete()
+https://blog.csdn.net/fengxinlinux/article/details/53121287

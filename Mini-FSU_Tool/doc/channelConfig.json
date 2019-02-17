@@ -1,0 +1,44 @@
+{
+    "AI_DIChannels": [
+        {
+            "active": 0,
+            "devCode": "0",
+            "id": 1,
+            "maxValue": 0,
+            "minValue": 0,
+            "sensorType": 0,
+            "signalIds": [
+            ],
+            "tag": "测试1"
+        },
+        {
+            "active": 0,
+            "devCode": "0",
+            "id": 2,
+            "maxValue": 0,
+            "minValue": 0,
+            "sensorType": 0,
+            "signalIds": [
+            ],
+            "tag": "测试2"
+        }
+    ],
+    "DOChannels": [
+        {
+            "active": 0,
+            "devCode": "0",
+            "id": 1,
+            "signalIds": [
+            ],
+            "tag": "测试3"
+        },
+        {
+            "active": 0,
+            "devCode": "0",
+            "id": 2,
+            "signalIds": [
+            ],
+            "tag": "测试4"
+        }
+    ]
+}

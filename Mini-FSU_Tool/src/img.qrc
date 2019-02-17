@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/gif/waitcircle.gif</file>
+        <file>dict/signal_dic.json</file>
+        <file>img/common/no.png</file>
+        <file>img/common/yes.png</file>
+    </qresource>
+</RCC>
